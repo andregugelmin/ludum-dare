@@ -19,47 +19,20 @@ public class Enemy : MonoBehaviour
     private float attackRange;
     [SerializeField]
     private float moveSpeed;
-    [SerializeField]
-    private float turnSpeed;
 
     private float distanceFromPlayer;
     private float distanceFromBixinho;
     private float distanceFromTarget;
-    private float angle;
-
-    private Rigidbody rigidbody;
-
-    private CharState charState;
-    private enum CharState
-    {
-        idle, chasing, atacking
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("CheckDistances");
-        rigidbody = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (charState)
-        {
-            case CharState.idle:
-
-                break;
-            case CharState.chasing:
-                if(target == null)
-                {
-                    charState = CharState.idle;
-                }
-                break;
-            case CharState.atacking:
-                break;
-
-        }
         if (distanceFromPlayer < distPlayer)
             target = player;
         else if (distanceFromBixinho < distBixo)
@@ -70,26 +43,8 @@ public class Enemy : MonoBehaviour
     }
     void FixedUpdate()
     {
-        switch (charState)
-        {
-            case CharState.idle:                    
-                break;
-            case CharState.chasing:
-                if (target != null && distanceFromTarget > attackRange)
-                {
-                    float targetAngle = Mathf.Atan2(target.position.x - transform.position.x, target.position.z - transform.position.z) * Mathf.Rad2Deg;
-                    angle = Mathf.LerpAngle(angle, targetAngle, Time.deltaTime * turnSpeed);
-                    transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-                    rigidbody.MoveRotation(Quaternion.Euler(Vector3.up * angle));
-                }                          
-                 
-                break;
-
-            case CharState.atacking:
-                break;
-
-        }
-
+        if(target !=null && distanceFromTarget > attackRange)
+            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
     }
 
      private IEnumerator CheckDistances()
