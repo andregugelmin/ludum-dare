@@ -73,13 +73,14 @@ public class Enemy : MonoBehaviour
     {
         switch (charState)
         {
-            case CharState.idle:                    
+            case CharState.idle:
+                this.rigidbody.velocity = Vector3.zero;
+                this.rigidbody.angularVelocity = Vector3.zero;
                 break;
             case CharState.chasing:
                 if (target != null && distanceFromTarget > attackRange)
                 {
-                    float targetAngle = Mathf.Atan2(target.position.x - transform.position.x, target.position.z - transform.position.z) * Mathf.Rad2Deg;
-                    angle = Mathf.LerpAngle(angle, targetAngle, Time.deltaTime * turnSpeed);
+                    angle = Mathf.Atan2(target.position.x - transform.position.x, target.position.z - transform.position.z) * Mathf.Rad2Deg;
                     transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
                     rigidbody.MoveRotation(Quaternion.Euler(Vector3.up * angle));
                 }                          
@@ -101,7 +102,7 @@ public class Enemy : MonoBehaviour
             distanceFromBixinho = (bixinho.transform.position - transform.position).sqrMagnitude;
             if (target != null)
                 distanceFromTarget = (target.transform.position - transform.position).sqrMagnitude;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
            
         }
     }
