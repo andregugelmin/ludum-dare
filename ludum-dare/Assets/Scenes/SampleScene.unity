@@ -1114,16 +1114,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-<<<<<<< HEAD
   m_LocalRotation: {x: -0.34042522, y: -0.0000009054686, z: 0.000002392123, w: -0.9402716}
   m_LocalPosition: {x: 0, y: 25, z: -30}
-||||||| 4ad9947... Ia enemy
-  m_LocalRotation: {x: -0.38268343, y: -0.0000009623498, z: 0.0000023732155, w: -0.92387956}
-  m_LocalPosition: {x: 0, y: 45, z: -45}
-=======
-  m_LocalRotation: {x: -0.34042525, y: -0.00000086012403, z: 0.0000023757061, w: -0.9402716}
-  m_LocalPosition: {x: 0, y: 25, z: -30}
->>>>>>> parent of 4ad9947... Ia enemy
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1742,7 +1734,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529961815}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!1 &1556466019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,76 +1801,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-||||||| 4ad9947... Ia enemy
-=======
---- !u!1 &1556466019
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1556466021}
-  - component: {fileID: 1556466020}
-  m_Layer: 0
-  m_Name: CM vcam1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1556466020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556466019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExcludedPropertiesInInspector:
-  - m_Script
-  m_LockStageInInspector: 
-  m_StreamingVersion: 20170927
-  m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 900242722}
-  m_Follow: {fileID: 900242722}
-  m_Lens:
-    FieldOfView: 40
-    OrthographicSize: 5
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    LensShift: {x: 0, y: 0}
-  m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
-    m_OnCameraLive:
-      m_PersistentCalls:
-        m_Calls: []
-  m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 1000785657}
---- !u!4 &1556466021
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556466019}
-  m_LocalRotation: {x: -0.34042525, y: -0.00000086012403, z: 0.0000023757061, w: -0.9402716}
-  m_LocalPosition: {x: 0, y: 25, z: -30}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1000785657}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 4ad9947... Ia enemy
 --- !u!1 &1562296327
 GameObject:
   m_ObjectHideFlags: 0
