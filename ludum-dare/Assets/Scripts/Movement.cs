@@ -30,6 +30,12 @@ public class Movement : MonoBehaviour
     private GameObject ActionBar;
     [SerializeField]
     private GameObject Bar;
+    [SerializeField]
+    private GameObject InteractText;
+    [SerializeField]
+    private GameObject TextObj;
+ 
+    private TMPro.TextMeshPro Text;
 
     private CharState charState;
     private enum CharState
@@ -41,6 +47,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        Text = TextObj.GetComponent<TMPro.TextMeshPro>();
     }
 
     // Update is called once per frame
@@ -68,11 +75,13 @@ public class Movement : MonoBehaviour
             case CharState.destroyingObj:
                 actionTime += 1*Time.deltaTime;
                 Bar.transform.localScale = new Vector3(actionTime/5, Bar.transform.localScale.y, Bar.transform.localScale.z);
+                
                 if (actionTime > TotalActionTime)
                 {
                     charState = CharState.idle;
                     Destroy(objTarget);
                     ActionBar.SetActive(false);
+                    InteractText.SetActive(false);
                 }
                 Debug.Log(actionTime);
                 break;
@@ -114,6 +123,9 @@ public class Movement : MonoBehaviour
     {
         if (other.name == "ObjTriggerArea")
         {
+            InteractText.SetActive(true);
+            InteractText.transform.position = other.transform.position;            
+
             if (Input.GetButtonDown("Action"))
             {
                 if (charState != CharState.destroyingObj)
@@ -122,7 +134,8 @@ public class Movement : MonoBehaviour
                     actionTime = 0;
                     objTarget = other.transform.parent.gameObject;
                     ActionBar.SetActive(true);
-                    ActionBar.transform.position = other.transform.position + new Vector3(0, 5, 0);
+                    ActionBar.transform.position = other.transform.position + new Vector3(0, 2, 0);
+                    Text.text = "Press E to cancel";
                 }
 
                 else
@@ -130,10 +143,18 @@ public class Movement : MonoBehaviour
                     charState = CharState.idle;
                     objTarget = null;
                     ActionBar.SetActive(false);
+                    Text.text = "Press E to destroy";
                 }
                     
             }
         }
     }
-    
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.name == "ObjTriggerArea")
+        {
+            InteractText.SetActive(false);
+        }
+    }
+
 }
