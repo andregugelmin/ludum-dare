@@ -17,6 +17,7 @@ public class Atack : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         Attack(player.GetComponent<PlayerStats>().Attack, collider);
+        Debug.Log("Triggered");
     }
 
     public void SetCollider(bool enable)
@@ -30,6 +31,7 @@ public class Atack : MonoBehaviour
         if (damageableObject != null)
         {
             damageableObject.TakeHit(Damage);
+            Debug.Log("Attacked");
         }
     }
 }

@@ -119,7 +119,7 @@ public class Movement : MonoBehaviour
                 }
                 break;
         }
-        Debug.Log(charState);
+
 
     }
 

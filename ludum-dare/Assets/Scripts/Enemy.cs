@@ -98,8 +98,10 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            distanceFromPlayer = (player.transform.position - transform.position).sqrMagnitude;
-            distanceFromBixinho = (bixinho.transform.position - transform.position).sqrMagnitude;
+            if(player!=null)
+                distanceFromPlayer = (player.transform.position - transform.position).sqrMagnitude;
+            if(bixinho!=null)
+                distanceFromBixinho = (bixinho.transform.position - transform.position).sqrMagnitude;
             if (target != null)
                 distanceFromTarget = (target.transform.position - transform.position).sqrMagnitude;
             yield return new WaitForSeconds(0.1f);
