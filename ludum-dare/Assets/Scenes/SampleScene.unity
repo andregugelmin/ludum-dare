@@ -6197,6 +6197,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2949616677367802949, guid: d5a13a1799d5cc44d9271000675186eb,
+        type: 3}
+      propertyPath: ActionBar
+      value: 
+      objectReference: {fileID: 350315201}
+    - target: {fileID: 2949616677367802949, guid: d5a13a1799d5cc44d9271000675186eb,
+        type: 3}
+      propertyPath: Bar
+      value: 
+      objectReference: {fileID: 1489677521}
+    - target: {fileID: 2949616677367802949, guid: d5a13a1799d5cc44d9271000675186eb,
+        type: 3}
+      propertyPath: InteractText
+      value: 
+      objectReference: {fileID: 1126353297}
+    - target: {fileID: 2949616677367802949, guid: d5a13a1799d5cc44d9271000675186eb,
+        type: 3}
+      propertyPath: TextObj
+      value: 
+      objectReference: {fileID: 731414348}
     - target: {fileID: 2949616677367802950, guid: d5a13a1799d5cc44d9271000675186eb,
         type: 3}
       propertyPath: m_LocalPosition.x
