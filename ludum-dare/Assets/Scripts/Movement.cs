@@ -12,12 +12,17 @@ public class Movement : MonoBehaviour
     private float TurnSpeed = 8;
     [SerializeField]
     private float TotalActionTime = 5;
+    [SerializeField]
+    private float AttackCooldown;
 
     private float angle;
     private float smoothInputMagnitude;
     private float smoothMoveVelocity;
     private float inputMagnitude;
     private float actionTime;
+
+    private int noOfClicks = 0;
+    private float attackTime = 0;
 
     private Vector3 velocity;
     private Vector3 inputDirection;
@@ -34,13 +39,15 @@ public class Movement : MonoBehaviour
     private GameObject InteractText;
     [SerializeField]
     private GameObject TextObj;
+    [SerializeField]
+    private BoxCollider attackCollider;
  
     private TMPro.TextMeshPro Text;
 
     private CharState charState;
     private enum CharState
     {
-        idle, moving, destroyingObj
+        idle, moving, destroyingObj, attacking
     }
 
     // Start is called before the first frame update
@@ -62,6 +69,14 @@ public class Movement : MonoBehaviour
                 {
                     charState = CharState.moving;
                 }
+                if (Input.GetMouseButtonDown(0) && Time.time - attackTime > AttackCooldown)
+                {
+                    attackTime = Time.time;
+                    noOfClicks++;
+                    Attack();
+                    charState = CharState.attacking;
+                    attackCollider.enabled = true;
+                }
                 break;
             case CharState.moving:
                 checkMovement();
@@ -70,7 +85,14 @@ public class Movement : MonoBehaviour
                 {
                     charState = CharState.idle;
                 }
-
+                if (Input.GetMouseButtonDown(0) && Time.time - attackTime > AttackCooldown)
+                {
+                    attackTime = Time.time;
+                    noOfClicks++;
+                    Attack();
+                    charState = CharState.attacking;
+                    attackCollider.enabled = true;
+                }
                 break;
             case CharState.destroyingObj:
                 actionTime += 1*Time.deltaTime;
@@ -84,6 +106,17 @@ public class Movement : MonoBehaviour
                     InteractText.SetActive(false);
                 }
                 Debug.Log(actionTime);
+                break;
+            case CharState.attacking:
+                if (Input.GetMouseButtonDown(0))
+                {
+                    attackTime = Time.time;
+                    noOfClicks++;
+                }
+                if (Time.time - attackTime > 0.2)
+                {
+                    returnAttack();
+                }
                 break;
         }
         Debug.Log(charState);
@@ -101,8 +134,10 @@ public class Movement : MonoBehaviour
                 rigidbody.MoveRotation(Quaternion.Euler(Vector3.up * angle));
                 rigidbody.MovePosition(rigidbody.position + velocity * Time.deltaTime);
                 break;
-            case CharState.destroyingObj:
-                
+            case CharState.destroyingObj:              
+
+                break;
+            case CharState.attacking:
 
                 break;
         }
@@ -157,4 +192,24 @@ public class Movement : MonoBehaviour
         }
     }
 
+
+    void Attack()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            angle = Mathf.Atan2(hit.point.x - transform.position.x, hit.point.z - transform.position.z) * Mathf.Rad2Deg;
+            rigidbody.MoveRotation(Quaternion.Euler(Vector3.up * angle));
+        }
+    }
+
+    public void returnAttack()
+    {
+        noOfClicks = 0;
+        charState = CharState.idle;
+        attackCollider.enabled = false;
+    }
 }
