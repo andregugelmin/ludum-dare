@@ -83,6 +83,8 @@ public class Movement : MonoBehaviour
                     ActionBar.SetActive(false);
                     InteractText.SetActive(false);
                 }
+                
+                angle = Mathf.Atan2(objTarget.transform.position.x - transform.position.x, objTarget.transform.position.z - transform.position.z) * Mathf.Rad2Deg;
                 Debug.Log(actionTime);
                 break;
         }
@@ -102,7 +104,7 @@ public class Movement : MonoBehaviour
                 rigidbody.MovePosition(rigidbody.position + velocity * Time.deltaTime);
                 break;
             case CharState.destroyingObj:
-                
+                rigidbody.MoveRotation(Quaternion.Euler(Vector3.up * angle));
 
                 break;
         }
