@@ -50,11 +50,14 @@ public class Movement : MonoBehaviour
         idle, moving, destroyingObj, attacking
     }
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         Text = TextObj.GetComponent<TMPro.TextMeshPro>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -76,6 +79,7 @@ public class Movement : MonoBehaviour
                     Attack();
                     charState = CharState.attacking;
                     attackCollider.enabled = true;
+                    animator.SetBool("isAttacking", true);
                 }
                 break;
             case CharState.moving:
@@ -92,6 +96,7 @@ public class Movement : MonoBehaviour
                     Attack();
                     charState = CharState.attacking;
                     attackCollider.enabled = true;
+                    animator.SetBool("isAttacking", true);
                 }
                 break;
             case CharState.destroyingObj:
@@ -152,6 +157,7 @@ public class Movement : MonoBehaviour
 
         float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
         angle = Mathf.LerpAngle(angle, targetAngle, Time.deltaTime * TurnSpeed * inputMagnitude);
+        animator.SetFloat("Speed", inputMagnitude);
     }
 
     private void OnTriggerStay(Collider other)
@@ -211,5 +217,6 @@ public class Movement : MonoBehaviour
         noOfClicks = 0;
         charState = CharState.idle;
         attackCollider.enabled = false;
+        animator.SetBool("isAttacking", false);
     }
 }
