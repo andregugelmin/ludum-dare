@@ -10,21 +10,31 @@ public class Movement : MonoBehaviour
     private float SmoothMoveTime = .1f;
     [SerializeField]
     private float TurnSpeed = 8;
+    [SerializeField]
+    private float TotalActionTime = 5;
 
     private float angle;
     private float smoothInputMagnitude;
     private float smoothMoveVelocity;
     private float inputMagnitude;
+    private float actionTime;
 
     private Vector3 velocity;
     private Vector3 inputDirection;
 
     private new Rigidbody rigidbody;
 
+    private GameObject objTarget;
+
+    [SerializeField]
+    private GameObject ActionBar;
+    [SerializeField]
+    private GameObject Bar;
+
     private CharState charState;
     private enum CharState
     {
-        idle, moving
+        idle, moving, destroyingObj
     }
 
     // Start is called before the first frame update
@@ -55,7 +65,19 @@ public class Movement : MonoBehaviour
                 }
 
                 break;
+            case CharState.destroyingObj:
+                actionTime += 1*Time.deltaTime;
+                Bar.transform.localScale = new Vector3(actionTime/5, Bar.transform.localScale.y, Bar.transform.localScale.z);
+                if (actionTime > TotalActionTime)
+                {
+                    charState = CharState.idle;
+                    Destroy(objTarget);
+                    ActionBar.SetActive(false);
+                }
+                Debug.Log(actionTime);
+                break;
         }
+        Debug.Log(charState);
 
     }
 
@@ -70,6 +92,10 @@ public class Movement : MonoBehaviour
                 rigidbody.MoveRotation(Quaternion.Euler(Vector3.up * angle));
                 rigidbody.MovePosition(rigidbody.position + velocity * Time.deltaTime);
                 break;
+            case CharState.destroyingObj:
+                
+
+                break;
         }
 
     }
@@ -83,4 +109,31 @@ public class Movement : MonoBehaviour
         float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
         angle = Mathf.LerpAngle(angle, targetAngle, Time.deltaTime * TurnSpeed * inputMagnitude);
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.name == "ObjTriggerArea")
+        {
+            if (Input.GetButtonDown("Action"))
+            {
+                if (charState != CharState.destroyingObj)
+                {
+                    charState = CharState.destroyingObj;
+                    actionTime = 0;
+                    objTarget = other.transform.parent.gameObject;
+                    ActionBar.SetActive(true);
+                    ActionBar.transform.position = other.transform.position + new Vector3(0, 5, 0);
+                }
+
+                else
+                {
+                    charState = CharState.idle;
+                    objTarget = null;
+                    ActionBar.SetActive(false);
+                }
+                    
+            }
+        }
+    }
+    
 }
