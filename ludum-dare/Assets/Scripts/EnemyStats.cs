@@ -12,7 +12,8 @@ public class EnemyStats : MonoBehaviour, IDamageable
     private bool dead;
     [SerializeField]
     private ParticleSystem blood;
-
+    [SerializeField]
+    private AudioManager am;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
             isHitCooldown = Time.time + stunCooldown;
 
             Life -= damageTaken;
+            am.Play("dano bandido");
         }
 
         if (Life <= 0 && !dead)
@@ -49,5 +51,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
 
     void Die()
     {
+        am.Play("morte bandido");
+        Destroy(gameObject);
     }
 }

@@ -117,6 +117,7 @@ public class Movement : MonoBehaviour
                     ActionBar.SetActive(false);
                     InteractText.SetActive(false);
                     Instantiate(smoke, objTarget.transform.position, Quaternion.identity);
+                    animator.SetBool("isRemovingObstacle", false);
                 }
                 Debug.Log(actionTime);
                 break;
@@ -181,6 +182,8 @@ public class Movement : MonoBehaviour
                     ActionBar.SetActive(true);
                     ActionBar.transform.position = other.transform.position + new Vector3(0, 2, 0);
                     Text.text = "Press E to cancel";
+                    animator.SetBool("isRemovingObstacle", true);
+                    PlaySound("Cortando");
                 }
 
                 else
@@ -189,6 +192,8 @@ public class Movement : MonoBehaviour
                     objTarget = null;
                     ActionBar.SetActive(false);
                     Text.text = "Press E to destroy";
+                    animator.SetBool("isRemovingObstacle", false);
+                    am.Stop("Cortando");
                 }
                     
             }
