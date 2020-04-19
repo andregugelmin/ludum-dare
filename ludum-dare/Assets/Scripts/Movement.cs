@@ -205,7 +205,7 @@ public class Movement : MonoBehaviour
 
     void Attack()
     {
-        am.Play("Ataque");
+        PlaySound("Ataque");
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -224,5 +224,10 @@ public class Movement : MonoBehaviour
         charState = CharState.idle;
         attackCollider.enabled = false;
         animator.SetBool("isAttacking", false);
+    }
+
+    public void PlaySound(string sound)
+    {
+        am.Play(sound);
     }
 }
