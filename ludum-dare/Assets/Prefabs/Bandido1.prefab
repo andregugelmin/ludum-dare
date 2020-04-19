@@ -4767,6 +4767,7 @@ GameObject:
   - component: {fileID: 1652900560416615803}
   - component: {fileID: 1652900560416615800}
   - component: {fileID: 1652900560416615797}
+  - component: {fileID: 6217750680788349525}
   m_Layer: 0
   m_Name: Bandido1
   m_TagString: Untagged
@@ -4804,11 +4805,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bixinho: {fileID: 0}
   player: {fileID: 2949616677367802950, guid: d5a13a1799d5cc44d9271000675186eb, type: 3}
+  isAttacking: 0
   distBixo: 100
   distPlayer: 50
   attackRange: 10
   moveSpeed: 5
   turnSpeed: 0
+  attackCooldown: 0
 --- !u!54 &1652900560416615803
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4843,6 +4846,7 @@ MonoBehaviour:
   Life: 0
   stunCooldown: 0.03
   blood: {fileID: 1652900560297954972}
+  am: {fileID: 0}
 --- !u!65 &1652900560416615797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4856,6 +4860,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 4, z: 1.2}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &6217750680788349525
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652900560416615801}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1652900559085117767
 PrefabInstance:
   m_ObjectHideFlags: 0
