@@ -18,12 +18,15 @@ public class BixinhoMovement : MonoBehaviour
 
     private float angle;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         waypoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<waypoints>();
         moveSpeedValue = moveSpeed;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,8 +59,18 @@ public class BixinhoMovement : MonoBehaviour
         RaycastHit hit;
         Debug.DrawLine(transform.position, transform.position + transform.TransformDirection(Vector3.forward)*2, Color.red);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 2.0f))
+        {
             moveSpeedValue = 0;
+            animator.SetBool("isMoving", false);
+
+        }
+
+
         else
+        {
             moveSpeedValue = moveSpeed;
+            animator.SetBool("isMoving", true);
+        }
+            
     }
 }
