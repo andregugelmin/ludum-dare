@@ -21,7 +21,10 @@ public class Enemy : MonoBehaviour
     private float moveSpeed;
     [SerializeField]
     private float turnSpeed;
+    [SerializeField]
+    private float attackCooldown;
 
+    private float attackTime;
     private float distanceFromPlayer;
     private float distanceFromBixinho;
     private float distanceFromTarget;
@@ -35,11 +38,15 @@ public class Enemy : MonoBehaviour
         idle, chasing, atacking
     }
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("CheckDistances");
         rigidbody = gameObject.GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        attackTime = Time.time;
     }
 
     // Update is called once per frame
@@ -48,16 +55,26 @@ public class Enemy : MonoBehaviour
         switch (charState)
         {
             case CharState.idle:
+                animator.SetBool("isAttacking", false);
+                animator.SetBool("isMoving", false);
                 if (target != null)
+                {
                     charState = CharState.chasing;
+                }
+                    
                 break;
             case CharState.chasing:
-                if(target == null)
+                animator.SetBool("isAttacking", false);
+                animator.SetBool("isMoving", true);
+                if (target == null)
                 {
                     charState = CharState.idle;
                 }
+                
                 break;
             case CharState.atacking:
+                animator.SetBool("isAttacking", true);
+                animator.SetBool("isMoving", false);
                 break;
 
         }
@@ -67,7 +84,15 @@ public class Enemy : MonoBehaviour
             target = bixinho;
         else
             target = null;
-                
+
+        if (target != null && distanceFromTarget <= attackRange && Time.time - attackTime > attackCooldown)
+        {
+            charState = CharState.atacking;
+        }
+        else if(target != null && distanceFromTarget <= attackRange && Time.time - attackTime < attackCooldown)
+        {
+            charState = CharState.idle;
+        }
     }
     void FixedUpdate()
     {
@@ -83,11 +108,13 @@ public class Enemy : MonoBehaviour
                     angle = Mathf.Atan2(target.position.x - transform.position.x, target.position.z - transform.position.z) * Mathf.Rad2Deg;
                     transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
                     rigidbody.MoveRotation(Quaternion.Euler(Vector3.up * angle));
-                }                          
+                }
+                
                  
                 break;
 
             case CharState.atacking:
+
                 break;
 
         }
@@ -107,5 +134,11 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
            
         }
+    }
+
+    public void EndAttack()
+    {
+        charState = CharState.idle;
+        attackTime = Time.time;
     }
 }
