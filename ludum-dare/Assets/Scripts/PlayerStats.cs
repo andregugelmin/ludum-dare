@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int maxLifePlayer, Attack, Defence;
+    public int maxLifePlayer, Attack;
     public float Life, regenLife, regenCooldown = 1, timeRegenered;
 
     // Start is called before the first frame update
