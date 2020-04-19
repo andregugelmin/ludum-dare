@@ -58,6 +58,9 @@ public class Movement : MonoBehaviour
 
     private Animator animator;
 
+    [SerializeField]
+    private ParticleSystem blood;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -234,5 +237,11 @@ public class Movement : MonoBehaviour
     public void PlaySound(string sound)
     {
         am.Play(sound);
+    }
+
+    public void TakeHit()
+    {
+        blood.Play();
+
     }
 }
