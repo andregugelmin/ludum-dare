@@ -32,6 +32,9 @@ public class Movement : MonoBehaviour
     private GameObject objTarget;
 
     [SerializeField]
+    private GameObject smoke;
+
+    [SerializeField]
     private GameObject ActionBar;
     [SerializeField]
     private GameObject Bar;
@@ -109,6 +112,7 @@ public class Movement : MonoBehaviour
                     Destroy(objTarget);
                     ActionBar.SetActive(false);
                     InteractText.SetActive(false);
+                    Instantiate(smoke, objTarget.transform.position, Quaternion.identity);
                 }
                 Debug.Log(actionTime);
                 break;
