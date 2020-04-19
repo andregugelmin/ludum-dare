@@ -615,7 +615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677559066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 947, y: 518, z: -926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1397,14 +1397,14 @@ RectTransform:
   m_GameObject: {fileID: 1102448567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.596266, y: 3.596266, z: 3.596266}
+  m_LocalScale: {x: 4.896714, y: 4.896714, z: 4.896714}
   m_Children: []
   m_Father: {fileID: 298899230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -390.3, y: 260}
+  m_AnchoredPosition: {x: -261, y: 263}
   m_SizeDelta: {x: 208.17578, y: 61.148804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102448569
@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "SEI L\xC1\n"
+  m_text: LUMBERJACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b1e54771df1c304b85aff627975a11e, type: 2}
   m_sharedMaterial: {fileID: 8371372024561496218, guid: 4b1e54771df1c304b85aff627975a11e,
@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 60.75
+  m_fontSize: 32.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1495,10 +1495,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0.42842993, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1102448569}
-    characterCount: 7
+    characterCount: 10
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
