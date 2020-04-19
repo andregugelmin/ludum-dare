@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour, IDamageable
 {
-    public int maxLife, Attack, Defence, Life;    
+    public int maxLife, Attack, Life;    
 
     private bool isHit;
     private float isHitCooldown;
@@ -40,7 +40,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
             isHitCooldown = Time.time + stunCooldown;
 
             Life -= damageTaken;
-            am.Play("dano bandido");
+            am.Play("DanoBandido");
         }
 
         if (Life <= 0 && !dead)
