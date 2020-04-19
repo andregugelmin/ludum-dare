@@ -16,13 +16,21 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void PlayAgain ()
+    public void PlayAgainFromDerrota ()
     {       
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-
-    public void BackToMenu()
+    public void PlayAgainFromVitoria()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    }
+
+    public void BackToMenuFromDerrota()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    }
+    public void BackToMenuFromVitoria()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
     }
 }

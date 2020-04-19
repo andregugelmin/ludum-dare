@@ -372,7 +372,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 418023453}
-        m_MethodName: PlayAgain
+        m_MethodName: PlayAgainFromVitoria
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -655,7 +655,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 418023453}
-        m_MethodName: BackToMenu
+        m_MethodName: BackToMenuFromVitoria
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
