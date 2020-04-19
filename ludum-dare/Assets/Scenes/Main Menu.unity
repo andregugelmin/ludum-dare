@@ -1032,6 +1032,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1165790054}
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &896428465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1525,6 +1536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165790052}
   - component: {fileID: 1165790053}
+  - component: {fileID: 1165790054}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -1647,6 +1659,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1165790054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165790051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e10c39dc2fe0748ab28773fb47082d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1187390003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,6 +2078,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1165790054}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1788895769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2294,7 +2329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.37878248, g: 0.6037736, b: 0.534308, a: 1}
+  m_Color: {r: 0.020692414, g: 0.2924528, b: 0.26826972, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
