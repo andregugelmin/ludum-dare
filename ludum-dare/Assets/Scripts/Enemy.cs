@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
 
     private Transform target;
 
+    public bool isAttacking;
+
     [SerializeField]
     private float distBixo;
     [SerializeField]
@@ -121,7 +123,15 @@ public class Enemy : MonoBehaviour
 
     }
 
-     private IEnumerator CheckDistances()
+    private void OnTriggerStay(Collider collider)
+    {
+        if (isAttacking && collider.gameObject.tag == "Player")
+        {
+            collider.gameObject.GetComponent<Movement>().TakeHit();
+        }
+    }
+
+    private IEnumerator CheckDistances()
     {
         while (true)
         {
@@ -140,5 +150,14 @@ public class Enemy : MonoBehaviour
     {
         charState = CharState.idle;
         attackTime = Time.time;
+    }
+
+    public void TurnOnAttack()
+    {
+        isAttacking = true;
+    }
+    public void TurnOffAttack()
+    {
+        isAttacking = false;
     }
 }
