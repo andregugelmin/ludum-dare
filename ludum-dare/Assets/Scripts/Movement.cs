@@ -122,10 +122,6 @@ public class Movement : MonoBehaviour
                     attackTime = Time.time;
                     noOfClicks++;
                 }
-                if (Time.time - attackTime > 0.2)
-                {
-                    returnAttack();
-                }
                 break;
         }
 
