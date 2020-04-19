@@ -980,7 +980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebbc59fd551e7a4289eb3a57ff33189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoke: {fileID: 5953513620073790443, guid: 1057521ca556c56499e620ffba64247e, type: 3}
 --- !u!1 &928061656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1156,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.34042528, y: -0.00000083950255, z: 0.00000236824, w: -0.9402716}
+  m_LocalRotation: {x: -0.34042528, y: -0.00000088814625, z: 0.0000023858515, w: -0.9402716}
   m_LocalPosition: {x: 0, y: 26.85, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1483,7 +1482,97 @@ MonoBehaviour:
   - name: Ambiente
     clip: {fileID: 8300000, guid: b8963917c8d03f1489c8e69db9dad3ab, type: 3}
     volume: 0.29
-    pitch: 0
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Cortando
+    clip: {fileID: 8300000, guid: 4b851b235cebb0246a155308d8c73070, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ataque
+    clip: {fileID: 8300000, guid: 5ab2c1f2a846b6042b0f8ecef3441750, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Dano player
+    clip: {fileID: 8300000, guid: 9b9bb2994ee964046bbc70f6823db146, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Impacto
+    clip: {fileID: 8300000, guid: 683ff08c611b52c42bc8c8c8d5a05ae5, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: lobo grunhindo
+    clip: {fileID: 8300000, guid: 808ae73f9fde8a849b2959ef3ca6c5b5, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lobo grunhe
+    clip: {fileID: 8300000, guid: 516edadfe7c19ba43ab0c55cda2fe3d7, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lobo ataca
+    clip: {fileID: 8300000, guid: 2956cc907b289ff42b099be26faeb13b, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Morte mistico
+    clip: {fileID: 8300000, guid: 34dc485f3dbec1f4f89d7a1b10b0232f, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: morte player
+    clip: {fileID: 8300000, guid: 2e3bde61c73335b4da3f0d4b32443d5a, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: passos terra
+    clip: {fileID: 8300000, guid: 796925ac0bed572458662716a67ad813, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: passos grama
+    clip: {fileID: 8300000, guid: 00f87904e1670a543a61d61c8f53294d, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: dano bandido
+    clip: {fileID: 8300000, guid: ac259955e88dc9147a196552484b8b42, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: morte bandido
+    clip: {fileID: 8300000, guid: 4d1c1aeb8a5a2894ca255e1b8ab3fa1c, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bandido impacto
+    clip: {fileID: 8300000, guid: 3c1c74bb50bde9d468e3b41dba7b7878, type: 3}
+    volume: 0.29
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: energia
+    clip: {fileID: 8300000, guid: 86d585d4c6d73af42857a88d793971d4, type: 3}
+    volume: 0.29
+    pitch: 1
     loop: 1
     source: {fileID: 0}
 --- !u!4 &1262931827
@@ -1538,6 +1627,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5953513620073790443, guid: 1057521ca556c56499e620ffba64247e,
         type: 3}
+    - target: {fileID: 2949616677367802949, guid: d5a13a1799d5cc44d9271000675186eb,
+        type: 3}
+      propertyPath: am
+      value: 
+      objectReference: {fileID: 1262931826}
     - target: {fileID: 2949616677367802950, guid: d5a13a1799d5cc44d9271000675186eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2032,7 +2126,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556466019}
-  m_LocalRotation: {x: -0.34042528, y: -0.00000083950255, z: 0.00000236824, w: -0.9402716}
+  m_LocalRotation: {x: -0.34042528, y: -0.00000088814625, z: 0.0000023858515, w: -0.9402716}
   m_LocalPosition: {x: 0, y: 26.85, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

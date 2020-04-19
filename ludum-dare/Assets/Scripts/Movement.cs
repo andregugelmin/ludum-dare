@@ -5,6 +5,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]
+    private AudioManager am;
+
+    [SerializeField]
     private float MoveSpeed = 7;
     [SerializeField]
     private float SmoothMoveTime = .1f;
@@ -77,6 +80,7 @@ public class Movement : MonoBehaviour
                 }
                 if (Input.GetMouseButtonDown(0) && Time.time - attackTime > AttackCooldown)
                 {
+                    
                     attackTime = Time.time;
                     noOfClicks++;
                     Attack();
@@ -201,6 +205,8 @@ public class Movement : MonoBehaviour
 
     void Attack()
     {
+        am.Play("Ataque");
+
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
