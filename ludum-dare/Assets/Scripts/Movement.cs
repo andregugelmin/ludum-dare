@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private GameObject TextObj;
     
-    public BoxCollider attackCollider;
+    
  
     private TMPro.TextMeshPro Text;
 
@@ -90,7 +90,7 @@ public class Movement : MonoBehaviour
                     noOfClicks++;
                     Attack();
                     charState = CharState.attacking;
-                    attackCollider.enabled = true;
+                    
                     animator.SetBool("isAttacking", true);
                 }
                 break;
@@ -107,7 +107,6 @@ public class Movement : MonoBehaviour
                     noOfClicks++;
                     Attack();
                     charState = CharState.attacking;
-                    attackCollider.enabled = true;
                     animator.SetBool("isAttacking", true);
                 }
                 break;
@@ -213,7 +212,7 @@ public class Movement : MonoBehaviour
     }
 
 
-    void Attack()
+    public void Attack()
     {
         PlaySound("Ataque");
 

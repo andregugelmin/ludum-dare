@@ -11,6 +11,8 @@ public class Animacao : MonoBehaviour
     private AudioManager am;
 
     private Animator animator;
+
+    public BoxCollider attackCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,18 +22,27 @@ public class Animacao : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void returnAttack()
     {
         player.GetComponent<Movement>().noOfClicks = 0;
         player.GetComponent<Movement>().charState = Movement.CharState.idle;
-        player.GetComponent<Movement>().attackCollider.enabled = false;
         animator.SetBool("isAttacking", false);
     }
 
     public void PlaySound(string sound)
     {
         am.Play(sound);
+    }
+
+    public void SetAttackColiderOn()
+    {
+        attackCollider.enabled = true;
+    }
+
+    public void SetAttackColiderOff()
+    {
+        attackCollider.enabled = false;
     }
 }
