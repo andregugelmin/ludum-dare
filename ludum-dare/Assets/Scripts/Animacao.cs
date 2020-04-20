@@ -23,6 +23,7 @@ public class Animacao : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = player.transform.position;
+        gameObject.transform.rotation = player.transform.rotation;
     }
     public void returnAttack()
     {
