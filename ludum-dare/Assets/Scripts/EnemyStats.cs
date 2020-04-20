@@ -52,7 +52,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
 
     void Die()
     {
-        am.Play("morte bandido");
+        am.Play("MorteBandido");
         Destroy(gameObject);
     }
 }
