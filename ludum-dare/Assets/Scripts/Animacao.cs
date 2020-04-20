@@ -22,7 +22,7 @@ public class Animacao : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        gameObject.transform.position = player.transform.position;
     }
     public void returnAttack()
     {

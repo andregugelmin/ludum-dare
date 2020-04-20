@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -133,6 +134,13 @@ public class Enemy : MonoBehaviour
             collider.gameObject.GetComponent<PlayerStats>().TakeHit(gameObject.GetComponent<EnemyStats>().Attack);
             
         }
+        if (isAttacking && collider.gameObject.tag == "Fox" && !attackedPlayer)
+        {
+            attackedPlayer = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); ;
+
+        }
+
     }
 
     private IEnumerator CheckDistances()
