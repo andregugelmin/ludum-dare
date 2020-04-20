@@ -122,6 +122,7 @@ public class Movement : MonoBehaviour
                     InteractText.SetActive(false);
                     Instantiate(smoke, objTarget.transform.position, Quaternion.identity);
                     animator.SetBool("isRemovingObstacle", false);
+                    Text.text = "Press E to destroy";
                     PlaySound("Corte5");
                 }
                 Debug.Log(actionTime);

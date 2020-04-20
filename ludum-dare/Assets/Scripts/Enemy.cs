@@ -83,9 +83,18 @@ public class Enemy : MonoBehaviour
 
         }
         if (distanceFromPlayer < distPlayer)
+        {
             target = player;
+            distanceFromPlayer = 100000;
+        }
+            
+
         else if (distanceFromBixinho < distBixo)
+        {
             target = bixinho;
+            distanceFromBixinho = 100000;
+        }          
+       
         else
             target = null;
 
