@@ -19,6 +19,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
     void Start()
     {
         isHit = false;
+        Life = maxLife;
     }
 
     // Update is called once per frame

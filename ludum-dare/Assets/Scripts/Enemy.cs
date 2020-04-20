@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private Transform target;
 
     public bool isAttacking;
+    public bool attackedPlayer;
 
     [SerializeField]
     private float distBixo;
@@ -90,6 +91,7 @@ public class Enemy : MonoBehaviour
         if (target != null && distanceFromTarget <= attackRange && Time.time - attackTime > attackCooldown)
         {
             charState = CharState.atacking;
+            
         }
         else if(target != null && distanceFromTarget <= attackRange && Time.time - attackTime < attackCooldown)
         {
@@ -125,9 +127,11 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (isAttacking && collider.gameObject.tag == "Player")
+        if (isAttacking && collider.gameObject.tag == "Player" && !attackedPlayer)
         {
-            collider.gameObject.GetComponent<Movement>().TakeHit();
+            attackedPlayer = true;
+            collider.gameObject.GetComponent<PlayerStats>().TakeHit(gameObject.GetComponent<EnemyStats>().Attack);
+            
         }
     }
 
@@ -150,6 +154,7 @@ public class Enemy : MonoBehaviour
     {
         charState = CharState.idle;
         attackTime = Time.time;
+        attackedPlayer = false;
     }
 
     public void TurnOnAttack()
