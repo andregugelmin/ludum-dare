@@ -88,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c68fb79b5c12e040807938050c968a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 0
-  Attack: 0
+  maxLife: 100
+  Attack: 10
   Life: 0
   stunCooldown: 0.03
   blood: {fileID: 2578981224478584593}

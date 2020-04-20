@@ -155,7 +155,6 @@ MonoBehaviour:
   InteractText: {fileID: 0}
   TextObj: {fileID: 0}
   attackCollider: {fileID: 2949616677682710403}
-  blood: {fileID: 8481009044159789098}
 --- !u!54 &2949616677367802951
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -197,13 +196,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bd34f3f0faee742b69f433f2b6f2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifePlayer: 0
-  Attack: 0
-  Defence: 0
+  maxLifePlayer: 100
+  Attack: 40
   Life: 0
   regenLife: 0
   regenCooldown: 1
   timeRegenered: 0
+  blood: {fileID: 8481009044159789098}
+  am: {fileID: 0}
 --- !u!95 &8934781961370471123
 Animator:
   serializedVersion: 3
