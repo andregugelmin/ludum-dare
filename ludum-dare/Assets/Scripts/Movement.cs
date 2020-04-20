@@ -186,7 +186,7 @@ public class Movement : MonoBehaviour
                     actionTime = 0;
                     objTarget = other.transform.parent.gameObject;
                     ActionBar.SetActive(true);
-                    ActionBar.transform.position = other.transform.position + new Vector3(0, 2, 0);
+                    ActionBar.transform.position = transform.position + new Vector3(0, 2, 0);
                     Text.text = "Press E to cancel";
                     animator.SetBool("isRemovingObstacle", true);
                     //PlaySound("Cortando");                    
@@ -195,11 +195,7 @@ public class Movement : MonoBehaviour
 
                 else
                 {
-                    charState = CharState.idle;
-                    objTarget = null;
-                    ActionBar.SetActive(false);
-                    Text.text = "Press E to destroy";
-                    animator.SetBool("isRemovingObstacle", false);
+                    stopAction();
                     //am.Stop("Cortando");
                 }
                     
@@ -235,6 +231,15 @@ public class Movement : MonoBehaviour
     public void PlaySound(string sound)
     {
         am.Play(sound);
+    }
+
+    public void stopAction()
+    {
+        charState = CharState.idle;
+        objTarget = null;
+        ActionBar.SetActive(false);
+        Text.text = "Press E to destroy";
+        animator.SetBool("isRemovingObstacle", false);
     }
 
 }
