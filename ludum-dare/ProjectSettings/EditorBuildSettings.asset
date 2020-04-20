@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 4a58f7cd59e0b9243b33f93b3d1f9d79
   - enabled: 1
+    path: Assets/Scenes/kk eae.unity
+    guid: 2583c8700ff109e4cb960a06322e35bd
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
