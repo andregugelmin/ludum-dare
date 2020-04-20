@@ -137,7 +137,7 @@ public class Enemy : MonoBehaviour
         if (isAttacking && collider.gameObject.tag == "Fox" && !attackedPlayer)
         {
             attackedPlayer = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); ;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); ;
 
         }
 
