@@ -210,10 +210,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4365899156889953285, guid: ca0692f62964c274da1dc8ed10f91408,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4597657260243009408, guid: ca0692f62964c274da1dc8ed10f91408,
         type: 3}
       propertyPath: m_Name
       value: Tree3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597657260243009408, guid: ca0692f62964c274da1dc8ed10f91408,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5025894519105038473, guid: ca0692f62964c274da1dc8ed10f91408,
         type: 3}
@@ -512,6 +522,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree2
       objectReference: {fileID: 0}
+    - target: {fileID: 3676760643706957154, guid: 10997c11eab9694428306fd603a4edbe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8086758281231189338, guid: 10997c11eab9694428306fd603a4edbe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -566,6 +581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595374736856782460, guid: 10997c11eab9694428306fd603a4edbe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10997c11eab9694428306fd603a4edbe, type: 3}
@@ -816,6 +836,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3669985476610722148, guid: d22c2c4bff1d8174a8d6a785d5c9f80b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4621035823481238088, guid: d22c2c4bff1d8174a8d6a785d5c9f80b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -875,6 +900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448498353233799325, guid: d22c2c4bff1d8174a8d6a785d5c9f80b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22c2c4bff1d8174a8d6a785d5c9f80b, type: 3}
@@ -955,7 +985,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.34042528, y: -0.00000083950255, z: 0.00000236824, w: -0.9402716}
+  m_LocalRotation: {x: -0.34042525, y: -0.00000086012403, z: 0.0000023757061, w: -0.9402716}
   m_LocalPosition: {x: 0, y: 25.5, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2407,6 +2437,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3676760643706957154, guid: 10997c11eab9694428306fd603a4edbe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8086758281231189338, guid: 10997c11eab9694428306fd603a4edbe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2461,6 +2496,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595374736856782460, guid: 10997c11eab9694428306fd603a4edbe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10997c11eab9694428306fd603a4edbe, type: 3}
@@ -2554,7 +2594,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556466019}
-  m_LocalRotation: {x: -0.34042528, y: -0.00000083950255, z: 0.00000236824, w: -0.9402716}
+  m_LocalRotation: {x: -0.34042525, y: -0.00000086012403, z: 0.0000023757061, w: -0.9402716}
   m_LocalPosition: {x: 0, y: 25.5, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2663,10 +2703,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4365899156889953285, guid: ca0692f62964c274da1dc8ed10f91408,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4597657260243009408, guid: ca0692f62964c274da1dc8ed10f91408,
         type: 3}
       propertyPath: m_Name
       value: Tree3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597657260243009408, guid: ca0692f62964c274da1dc8ed10f91408,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5025894519105038473, guid: ca0692f62964c274da1dc8ed10f91408,
         type: 3}
@@ -2738,6 +2788,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3669985476610722148, guid: d22c2c4bff1d8174a8d6a785d5c9f80b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4621035823481238088, guid: d22c2c4bff1d8174a8d6a785d5c9f80b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2797,6 +2852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448498353233799325, guid: d22c2c4bff1d8174a8d6a785d5c9f80b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d22c2c4bff1d8174a8d6a785d5c9f80b, type: 3}
