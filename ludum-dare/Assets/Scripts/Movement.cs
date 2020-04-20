@@ -24,7 +24,8 @@ public class Movement : MonoBehaviour
     private float inputMagnitude;
     private float actionTime;
 
-    private int noOfClicks = 0;
+    [HideInInspector]
+    public int noOfClicks = 0;
     private float attackTime = 0;
 
     private Vector3 velocity;
@@ -45,17 +46,20 @@ public class Movement : MonoBehaviour
     private GameObject InteractText;
     [SerializeField]
     private GameObject TextObj;
-    [SerializeField]
-    private BoxCollider attackCollider;
+    
+    public BoxCollider attackCollider;
  
     private TMPro.TextMeshPro Text;
 
-    private CharState charState;
-    private enum CharState
+    [HideInInspector]
+    public CharState charState;
+    [HideInInspector]
+    public enum CharState
     {
         idle, moving, destroyingObj, attacking
     }
 
+    [SerializeField]
     private Animator animator;
 
 
@@ -64,7 +68,7 @@ public class Movement : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         Text = TextObj.GetComponent<TMPro.TextMeshPro>();
-        animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -224,13 +228,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void returnAttack()
-    {
-        noOfClicks = 0;
-        charState = CharState.idle;
-        attackCollider.enabled = false;
-        animator.SetBool("isAttacking", false);
-    }
+    
 
     public void PlaySound(string sound)
     {
