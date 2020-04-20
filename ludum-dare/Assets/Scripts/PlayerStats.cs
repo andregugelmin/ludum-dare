@@ -12,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     private ParticleSystem blood;
     [SerializeField]
     private AudioManager am;
+    [SerializeField]
+    private GameObject animacao;
 
     private bool isHit;
     private float isHitCooldown;
@@ -32,8 +34,9 @@ public class PlayerStats : MonoBehaviour
     {     
         
         blood.Play();
-            
-
+        gameObject.GetComponent<Movement>().charState = Movement.CharState.idle;
+        animacao.GetComponent<Animacao>().returnAttack();
+        animacao.GetComponent<Animacao>().SetAttackColiderOff();
         Life -= damage;
         am.Play("DanoPlayer");
         Debug.Log("Atacked");

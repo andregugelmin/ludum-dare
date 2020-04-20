@@ -220,6 +220,7 @@ MonoBehaviour:
   timeRegenered: 0
   blood: {fileID: 8481009044159789098}
   am: {fileID: 0}
+  animacao: {fileID: 1717647777417425022}
 --- !u!1 &2949616677682710400
 GameObject:
   m_ObjectHideFlags: 0
