@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2949616677367802948}
+  am: {fileID: 0}
+  attackCollider: {fileID: 2949616677682710403}
 --- !u!1 &2949616677367802948
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +169,6 @@ MonoBehaviour:
   Bar: {fileID: 0}
   InteractText: {fileID: 0}
   TextObj: {fileID: 0}
-  attackCollider: {fileID: 2949616677682710403}
   charState: 0
   animator: {fileID: 5694543982851665687}
 --- !u!54 &2949616677367802951
