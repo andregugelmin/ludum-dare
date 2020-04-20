@@ -174,7 +174,7 @@ public class Movement : MonoBehaviour
         if (other.name == "ObjTriggerArea")
         {
             InteractText.SetActive(true);
-            InteractText.transform.position = other.transform.position;            
+            InteractText.transform.position = transform.position;            
 
             if (Input.GetButtonDown("Action"))
             {
@@ -187,7 +187,8 @@ public class Movement : MonoBehaviour
                     ActionBar.transform.position = other.transform.position + new Vector3(0, 2, 0);
                     Text.text = "Press E to cancel";
                     animator.SetBool("isRemovingObstacle", true);
-                    PlaySound("Cortando");
+                    PlaySound("Cortando");                    
+                    
                 }
 
                 else
