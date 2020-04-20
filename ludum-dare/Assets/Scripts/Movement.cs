@@ -144,6 +144,7 @@ public class Movement : MonoBehaviour
         {
             case CharState.idle:
                 rigidbody.MoveRotation(transform.rotation);
+                rigidbody.velocity = Vector3.zero;
                 break;
             case CharState.moving:
                 rigidbody.MoveRotation(Quaternion.Euler(Vector3.up * angle));
