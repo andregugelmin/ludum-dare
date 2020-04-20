@@ -32,8 +32,11 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void TakeHit(int damage)
-    {     
-        
+    {
+        if (gameObject.GetComponent<Movement>().charState == Movement.CharState.destroyingObj)
+        {
+            gameObject.GetComponent<Movement>().stopAction();
+        }
         blood.Play();
         gameObject.GetComponent<Movement>().charState = Movement.CharState.idle;
         animacao.GetComponent<Animacao>().returnAttack();
@@ -46,6 +49,7 @@ public class PlayerStats : MonoBehaviour
         {
             Die();
         }
+        
     }
 
     void Die()
