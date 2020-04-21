@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour, IDamageable
 {
-    public int maxLife, Attack, Life;    
-
+    public float maxLife, Life;
+    public int Attack;
     private bool isHit;
     private float isHitCooldown;
     public float stunCooldown = 0.03f;
@@ -14,6 +14,10 @@ public class EnemyStats : MonoBehaviour, IDamageable
     private ParticleSystem blood;
     [SerializeField]
     private AudioManager am;
+    [SerializeField]
+    private GameObject LifeBar;
+    [SerializeField]
+    private GameObject Bar;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,11 @@ public class EnemyStats : MonoBehaviour, IDamageable
         {
             isHit = false;
         }
+        if (!LifeBar.activeInHierarchy && Life<maxLife)
+        {
+            LifeBar.SetActive(true);
+        }
+        Bar.transform.localScale = new Vector3(Life / maxLife, Bar.transform.localScale.y, Bar.transform.localScale.z);
     }
 
     public void TakeHit(int damage)
@@ -48,6 +57,8 @@ public class EnemyStats : MonoBehaviour, IDamageable
         {
             Die();
         }
+
+        
     }
 
     void Die()
